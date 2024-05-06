@@ -9,6 +9,7 @@
         display: grid;
         grid-template-columns: 180px auto;
         column-gap: 30px;
+        align-items: center;
     }
     &__img {
         width: 180px;
