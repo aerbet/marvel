@@ -1,5 +1,5 @@
 import AppHeader from "../AppHeader/AppHeader.jsx";
-import RandomChar from "../randomChar/RandomChar.jsx";
+import RandomChar from "../RandomChar/RandomChar.jsx";
 import CharList from "../CharList/CharList.jsx";
 import CharInfo from "../CharInfo/CharInfo.jsx";
 
