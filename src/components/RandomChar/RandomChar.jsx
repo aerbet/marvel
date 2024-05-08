@@ -1,7 +1,6 @@
 import './randomChar.scss';
 import mjolnir from '../../resources/img/mjolnir.png';
 
-
 import {Component} from "react";
 import Spinner from "../Spinner/Spinner.jsx";
 import MarvelService from "../../services/MarvelService.js";
@@ -10,15 +9,19 @@ import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
 class RandomChar extends Component {
     constructor(props) {
         super(props);
-        this.updateCharacter();
     }
     
     state = {
         char: {},
-        loading: true
+        loading: true,
     }
     
     marvelService = new MarvelService();
+    
+    componentDidMount() {
+        this.updateCharacter();
+    }
+    
     
     onCharLoaded = (char) => {
         this.setState({
@@ -43,6 +46,7 @@ class RandomChar extends Component {
           .catch(this.handleError)
     }
     
+    
     render() {
         const { char, loading, error } = this.state;
         const errorMessage = error ? <ErrorMessage /> : null;
@@ -63,7 +67,7 @@ class RandomChar extends Component {
                   <p className="randomchar__title">
                       Or choose another one
                   </p>
-                  <button className="button button__main">
+                  <button onClick={this.updateCharacter} className="button button__main">
                       <div className="inner">try it</div>
                   </button>
                   <img src={mjolnir} alt="mjolnir" className="randomchar__decoration"/>
