@@ -80,12 +80,15 @@ class CharInfo extends Component {
 
 const View = ({ char }) => {
   const { name, description, thumbnail, homepage, wiki, comics } = char;
+  const imgStyle = {'objectFit' : 'inherit'};
+  const comicsChar = comics.length === 0 ? 'Character does not have comics' : null;
   
   return (
     <>
       <div className="char__basics">
         <img src={thumbnail}
-             alt={name}/>
+             alt={name}
+             style={imgStyle}/>
         <div>
           <div className="char__info-name">{name}</div>
           <div className="char__btns">
@@ -103,10 +106,10 @@ const View = ({ char }) => {
       <div className="char__descr">
         {description}
       </div>
-      <div className="char__comics">Comics:</div>
+      <div className="char__comics">Comics: {comicsChar}</div>
       <ul className="char__comics-list">
         {
-          comics.map((item, i) => {
+          comics.slice(0, 10).map((item, i) => {
             return (
               <li key={i} className="char__comics-item">
                 {item.name}
