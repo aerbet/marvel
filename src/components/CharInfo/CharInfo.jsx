@@ -1,9 +1,13 @@
 import './charInfo.scss';
+
 import {Component} from "react";
 import MarvelService from "../../services/MarvelService.js";
+
 import Spinner from "../Spinner/Spinner.jsx";
 import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
 import Skeleton from "../Skeleton/Skeleton.jsx";
+
+import PropTypes from "prop-types";
 
 class CharInfo extends Component {
   
@@ -120,6 +124,20 @@ const View = ({ char }) => {
       </ul>
     </>
   )
+}
+
+View.propTypes = {
+  char: PropTypes.object,
+  name: PropTypes.string,
+  description: PropTypes.string,
+  thumbnail: PropTypes.object,
+  homepage: PropTypes.object,
+  wiki: PropTypes.object,
+  comics: PropTypes.array,
+}
+
+CharInfo.propTypes = {
+  charId: PropTypes.number,
 }
 
 export default CharInfo;

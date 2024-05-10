@@ -1,9 +1,10 @@
 import './randomChar.scss';
 import mjolnir from '../../resources/img/mjolnir.png';
 
+import PropTypes from "prop-types";
 import {Component} from "react";
-import Spinner from "../Spinner/Spinner.jsx";
 import MarvelService from "../../services/MarvelService.js";
+import Spinner from "../Spinner/Spinner.jsx";
 import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
 
 class RandomChar extends Component {
@@ -103,6 +104,15 @@ const View = ({ char }) => {
           </div>
       </div>
     )
+}
+
+View.propTypes = {
+    char: PropTypes.object,
+    name: PropTypes.string,
+    description: PropTypes.string,
+    thumbnail: PropTypes.object,
+    homepage: PropTypes.object,
+    wiki: PropTypes.object,
 }
 
 export default RandomChar;
