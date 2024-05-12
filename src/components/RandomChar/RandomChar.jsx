@@ -3,9 +3,9 @@ import mjolnir from '../../resources/img/mjolnir.png';
 
 import PropTypes from "prop-types";
 import {Component} from "react";
-import MarvelService from "../../services/MarvelService.js";
-import Spinner from "../Spinner/Spinner.jsx";
-import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
+import MarvelService from "../../services/MarvelService";
+import Spinner from "../Spinner/Spinner";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
 
 class RandomChar extends Component {
     constructor(props) {

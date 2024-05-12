@@ -1,10 +1,10 @@
 import './charList.scss';
 
 import {Component} from "react";
-import MarvelService from "../../services/MarvelService.js";
+import MarvelService from "../../services/MarvelService";
 
-import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
-import Spinner from "../Spinner/Spinner.jsx";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
+import Spinner from "../Spinner/Spinner";
 
 import PropTypes from "prop-types";
 

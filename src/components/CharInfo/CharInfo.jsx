@@ -1,11 +1,11 @@
 import './charInfo.scss';
 
 import {Component} from "react";
-import MarvelService from "../../services/MarvelService.js";
+import MarvelService from "../../services/MarvelService";
 
-import Spinner from "../Spinner/Spinner.jsx";
-import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
-import Skeleton from "../Skeleton/Skeleton.jsx";
+import Spinner from "../Spinner/Spinner";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
+import Skeleton from "../Skeleton/Skeleton";
 
 import PropTypes from "prop-types";
 
