@@ -61,14 +61,31 @@ class CharList extends Component {
         });
     }
     
+    itemRefs = [];
+    
+    setRef = (ref) => {
+        this.itemRefs.push(ref);
+    }
+    
+    focusOnCard = (id) => {
+        this.itemRefs.forEach(item => item.classList.remove('char__item_selected'));
+        this.itemRefs[id].classList.add('char__item_selected');
+        this.itemRefs[id].focus();
+    }
+    
     getCharacters(arr) {
-        const items = arr.map((item) => {
+        const items = arr.map((item, index) => {
             const imgStyle = {'objectFit' : 'unset'};
             
             return (
-              <li className="char__item char__item_selected"
+              <li className="char__item"
+                  ref={this.setRef}
                   key={item.id}
-                  onClick={() => this.props.onCharSelected(item.id)}
+                  tabIndex={item.id}
+                  onClick={() => {
+                    this.props.onCharSelected(item.id);
+                    this.focusOnCard(index);
+              }}
               >
                   <img src={item.thumbnail}
                        alt={item.name}
@@ -84,6 +101,8 @@ class CharList extends Component {
           </ul>
         )
     }
+    
+    
     
     render() {
         const { charList, loading, error, offset, newItemLoading, charEnded } = this.state;
